@@ -1,0 +1,36 @@
+<div class="main h-full black">
+    <div class="home">
+        <div class="banner pt-1">
+            <ng-container *ngIf="bannerMovie; else noBannerMovie">
+                <ng-container *ngIf="bannerMovie.videoKey; else bannerImage">
+                    <ng-container *ngIf="!adBlockEnabled; else adBlockMessage">
+                        <iframe *ngIf="isVideoLoaded" class="banner-video pt-3" width="800" height="500"
+                            [src]="videoUrl" frameborder="0">
+                        </iframe>
+                    </ng-container>
+                    <ng-template #adBlockMessage>
+                        <div class="adblock-warning">
+                            <p>Please disable your ad blocker to view the video.</p>
+                        </div>
+                    </ng-template>
+                </ng-container>
+                <ng-template #bannerImage>
+                    <img class="banner-img pt-8" [src]="tmdbConfig.imagePath + bannerMovie.poster_path"
+                        alt="banner image" />
+                </ng-template>
+            </ng-container>
+            <ng-template #noBannerMovie>
+                <p>No banner movie available.</p>
+            </ng-template>
+            <div class="banner-movie-info">
+                <div class="banner-action">
+                    <button type="button" class="play-btn">Play</button>
+                    <button type="button" class="info-btn">More Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="black">
+        <app-fullhome></app-fullhome>
+    </div>
+</div>

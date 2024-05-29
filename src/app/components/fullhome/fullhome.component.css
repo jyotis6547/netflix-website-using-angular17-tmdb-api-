@@ -1,0 +1,41 @@
+/* p-carousel-item ,p-carousel-indicators p-reset*/
+:host ::ng-deep .p-carousel-item {
+    /*  */
+    height: 100%;
+
+}
+
+:host ::ng-deep .p-carousel-indicators,
+.p-reset {
+    display: none;
+}
+
+/*  */
+
+.movie-poster {
+    width: 100%;
+    margin-bottom: 0px;
+    transition: transform 0.4s ease;
+}
+
+.cd:hover .movie-poster {
+    transform: scale(1.2);
+
+}
+
+:host ::ng-deep .p-card-title {
+    font-size: 16px;
+}
+
+.popular,
+.toprated,
+.upcoming,
+.nowplaying {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.black {
+    background-color: #000000;
+    color: #ffffff;
+}

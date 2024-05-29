@@ -1,0 +1,21 @@
+<div class="header">
+    <a routerLink="/">
+        <img [src]="logoUrl" alt="logo" class="w-full h-2rem" />
+    </a>
+    <div class="sm:justify-content-center sm:align-items-center">
+        <p-iconField iconPosition="left">
+            <p-inputIcon styleClass="pi pi-search" />
+            <input type="text" pInputText placeholder="Search" />
+        </p-iconField>
+
+    </div>
+    <nav>
+        <ul class="sm:justify-content-center sm:align-content-center">
+            <li><a class="link" routerLink="/nowplaying" routerLinkActive="active">Now Playing</a></li>
+            <li><a class="link" routerLink="/toprated" routerLinkActive="active">Top Rated</a></li>
+            <li><a class="link" routerLink="/popular" routerLinkActive="active">Popular</a></li>
+            <li><a class="link" routerLink="/upcoming" routerLinkActive="active">Upcoming</a></li>
+        </ul>
+    </nav>
+
+</div>

@@ -1,0 +1,48 @@
+.movie-poster-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-poster {
+    width: 100%;
+    margin-bottom: 0px;
+    height: 360px;
+    transition: transform 0.4s ease;
+}
+
+.main:hover .movie-poster {
+    transform: scale(1.3);
+    /* Increase scale on hover for zoom effect */
+}
+
+:host ::ng-deep .p-card-title {
+    font-size: 16px;
+}
+
+.link {
+    color: #fff;
+
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #0862b7;
+
+}
+
+.popular {
+    background-color: #000000;
+    color: #ffffff;
+}
+:host ::ng-deep .p-button-label,
+.link {
+    color: #ffffff;
+    text-decoration: none;
+
+}
+
+:host ::ng-deep .p-button-label:hover {
+    color: #307ce6;
+    text-decoration: underline;
+
+}

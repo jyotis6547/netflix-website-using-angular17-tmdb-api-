@@ -1,0 +1,29 @@
+<!-- app.component.html -->
+<div class="grid p-0 m-0 popular">
+    <div class="col-12 mx-auto mb-4">
+        <div class="grid justify-center">
+            <div class="col-12 w-full sm:col-6  px-3 flex justify-content-between">
+                <h2 class="text-start pl-2">TopRated Movies</h2>
+                <p-button label="back" [link]="true" (onClick)="onHomeBack()" class="link" />
+            </div>
+        </div>
+        <div class="grid justify-center" *ngIf="topratedMovies.length">
+            <div *ngFor="let movie of topratedMovies" class="col-12 sm:col-6  md:col-4 lg:col-3 text-sm p-3 main">
+                <p-card header="{{ movie.title }}" subheader="{{ movie.release_date }}" [style]="{ height: '450px' }">
+                    <ng-template pTemplate="header">
+                        <div class="movie-poster-container">
+                            <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }}"
+                                class="movie-poster">
+                        </div>
+                    </ng-template>
+                </p-card>
+            </div>
+        </div>
+        <div *ngIf="!topratedMovies.length" class="grid justify-center align-center" style="height: 100vh;">
+            <div class="col-12 md:col-6 text-center">
+                <i class="pi pi-spin pi-spinner" style="font-size: 2rem;"></i>
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+</div>
